@@ -10,8 +10,7 @@
     <title>All Blogs</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <style>
       .bd-placeholder-img {
@@ -31,17 +30,17 @@
   <body>
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="{% url 'home' %}">Presentación</a>
+        <a class="navbar-brand" href="{% url 'home' %}">Diego Centurión</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="http://twitter.com">Twitter </a>
+              <a class="nav-link" href="https://github.com/diegocent07">Github</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% static 'Lista.txt' %}">Lista</a>
+              <!-- <a class="nav-link" href="{% static 'Lista.txt' %}">Lista</a> -->
               <a class="nav-link" href="{% static 'CV.pdf' %}">Resume</a>
             </li>
             <li class="nav-item">
@@ -63,12 +62,12 @@
 
     </div>
 
-    <div class="album py-5 bg-light">
-        <div class="container">
+    
           <div class="row">
               {% for blog in blogs.all %}
-            <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
+            <div class="col-sm-3">
+              <div class="card mb-3">
+              
                 <img class="card-img-top" src="{{ blog.image.url }}"/>
                 <div class="card-body">
                   <a href="{% url 'detail' blog.id %}" class="card-text">{{ blog.title }}</a>
@@ -77,12 +76,12 @@
                       {{ blog.pubdate_pretty }}
                   </div>
                 </div>
+              
               </div>
             </div>
               {% endfor %}
           </div>
-        </div>
-      </div>
+        
 
 </main>
 
